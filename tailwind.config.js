@@ -21,12 +21,14 @@ module.exports = {
                 slate: colors.slate,
                 gray: colors.trueGray,
                 zinc: colors.zinc,
+
             },
             maxWidth:{
                 custom: '62.5rem',
 
             },
             spacing:{
+                22: '5.5rem',
                 70: '17.5rem',
                 175: '43.75rem'
             },
