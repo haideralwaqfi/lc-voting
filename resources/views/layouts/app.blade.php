@@ -16,9 +16,9 @@
     </head>
     <body class="font-sans bg-gary-background antialiased">
 
-        <header class="flex items-center justify-between  px-8 py-4">
+        <header class="flex flex-col md:flex-row items-center justify-between  px-8 py-4">
             <a href=""><img src="{{ asset('logo.svg') }}" alt=""></a>
-        <div class="flex items-center">
+        <div class="flex items-center mt-2 md:mt-0">
 
                 @if (Route::has('login'))
                     <div class="top-0 right-0 px-6 py-4">
@@ -48,16 +48,16 @@
                 </div>
         </div>
         </header>
-<main class="container mx-auto max-w-custom flex">
-    <div class="w-70 mr-5" >
-        <div class="border-2 border-blue-100 rounded-xl mt-16 bg-white">
+<main class="container mx-auto max-w-custom flex flex-col md:flex-row">
+    <div class="w-70 mr-5 mx-auto md:mx-0 md:mr-5" >
+        <div class="border-2 border-blue-100 rounded-xl mt-16 bg-white md:sticky  top-8">
             <div class="text-center px-6 py-2 pt-6">
                 <h3 class="font-semi-bold">Add new Idea</h3>
                 <p class="text-xs mt-4 text-center">Let us new what you wuld like to and we will take a look</p>
             </div>
             <form class="space-y-4 px-4 py-6" action="#" method="POST">
                 <input id="idea" type="text" placeholder="Enter Your Idea" class="w-full text-sm bg-gray-100 rounded-xl placeholder-gray-900 px-4 py-2 border-none">
-                <div class="">
+                <div class="w">
                     <select name="category_add" id="category_add" class="bg-gray-100 text-sm w-full border-none rounded-xl px-4 py-2">
                         <option value="Category One">Category One</option>
                         <option value="Category Two">Category Two</option>
@@ -84,8 +84,8 @@
             </form>
         </div>
     </div>
-    <div class="w-175">
-        <nav class="flex items-center jusstify-between text-sm">
+    <div class="md:w-175 px-2 md:px-0 w-full">
+        <nav class="flex items-center jusstify-between text-sm hidden md:flex">
             <ul class="flex uppercase font-semibold border-b-4 pb-3 space-x-10">
                 <li ><a class="border-b-4 pb-3 border-blue-500" href="">All Ideas(87)</a></li>
                 <li ><a class="text-gray-400 transition duration-150 ease-in border-b-4 pb-3 hover:border-blue-500" href="">Considering (6)</a></li>
