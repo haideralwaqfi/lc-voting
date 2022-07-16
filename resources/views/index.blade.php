@@ -56,13 +56,23 @@
                     <div class="font-bold text-gray-500">Comments 3</div>
 
                 </div>
-                <div class="flex items-center space-x-2">
+                <div
+                x-data="{isOpen: false}"
+                class="flex items-center space-x-2">
                     <div class="bg-gray-200 text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4">
                         Open
                     </div>
-                    <button class="relative bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-full h-7 px-4 transition duration-150 ease-in">
+                    <button
+                    @click="isOpen = !isOpen"
+                    class="relative bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-full h-7 px-4 transition duration-150 ease-in">
                         <img class="h-7" src="three-dots-svgrepo-com.svg" alt="">
-                        <ul class="absolute w-44 text-left bg-white shadow-lg rounded-xl py-3 ml-8 border-gray-600">
+                        <ul
+                        x-cloak
+                        x-show="isOpen"
+                        x-transition.origin.top.left.duration.500ms
+                        @click.away="isOpen=false"
+                        @keydown.escape.window="isOpen=false"
+                        class="absolute w-44 text-left bg-white shadow-lg rounded-xl py-3 ml-8 border-gray-600">
                             <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in">Mark as Spam</a></li>
                             <li><a href="#" class="hover:bg-gray-100 block px-5 py-3 transition duration-150 ease-in ">Delete</a></li>
                         </ul>
