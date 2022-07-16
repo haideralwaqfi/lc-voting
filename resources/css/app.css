@@ -40,6 +40,9 @@
     left: -40px;
 
 }
+.is-admin{
+    border: skyblue solid 2px;
+}
 
 .is-admin::before{
     width: 38px;
@@ -50,6 +53,7 @@
     left: -58px;
     background: theme('colors.purple.500');
     opacity: 1;
+    border: skyblue solid 2px;
 }
 
 
