@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
-
+<livewire:styles/>
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -102,5 +102,6 @@
         </div>
     </div>
 </main>
+<livewire:scripts/>
     </body>
 </html>
