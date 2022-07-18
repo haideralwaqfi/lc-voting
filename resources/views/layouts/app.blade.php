@@ -43,7 +43,7 @@
                 @endif
                 <div>
                     <a href="">
-                        <img src="avatar-svgrepo-com.svg" alt="" class="w-10 h-10 rounded-full">
+                        <img src="{{ asset('avatar-svgrepo-com.svg') }}" alt="" class="w-10 h-10 rounded-full">
                     </a>
                 </div>
         </div>
