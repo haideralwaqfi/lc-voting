@@ -32,4 +32,28 @@ class Idea extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function getStatusColor($name)
+    {
+        $statuses= [
+            'Colesed' => 'bg-red-400',
+            'Considering'=> 'bg-red-400',
+            'In progress'=> 'bg-red-400',
+            'Implemented'=> 'bg-red-400',
+            'Open'=> 'bg-red-400',
+        ];
+
+        foreach($statuses as $key => $value){
+            if($name == $key)
+            {
+                return $value;
+            }
+
+        }
+    }
+
 }

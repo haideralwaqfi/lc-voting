@@ -8,6 +8,11 @@ module.exports = {
         './resources/views/**/*.blade.php',
     ],
 
+    content: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
+      ],
     theme: {
         extend: {
             colors: {
@@ -16,14 +21,14 @@ module.exports = {
 
                 black: colors.black,
                 white: colors.white,
-                gray: colors.trueGray,
+                gray: colors.gray,
                 'gray-background': '#f7f8fc',
                 'blue': '#328af1',
                 'blue-hover': '#2879bd',
                 'yellow' : '#ffc73c',
-                'red' : '#ec454f',
+                red : colors.red,
                 'green' : '#1aab8b',
-                'purple' : '#8b60ed',
+                purple : colors.purple,
             },
             spacing: {
                 22: '5.5rem',
