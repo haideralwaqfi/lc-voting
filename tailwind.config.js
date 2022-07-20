@@ -1,34 +1,42 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
+const { yellow } = require('tailwindcss/colors');
 
 module.exports = {
+    content: [
+        './**/*.{html,js}',
+    ],
+    safelist: [
+
+        {
+            pattern: /bg-(red|green|blue|yellow|purple)-(100|200|300|400|500|600|700|800|900)/,
+            variants: ['lg', 'hover', 'focus', 'lg:hover'],
+        },
+
+    ],
     purge: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
+        './resources/views/**/*.blade.php'
     ],
-
-    content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
-      ],
+    options: {
+        whitelistPatterns: [/^bg-/]
+    },
     theme: {
         extend: {
             colors: {
                 transparent: 'transparent',
                 current: 'currentColor',
-
                 black: colors.black,
                 white: colors.white,
                 gray: colors.gray,
                 'gray-background': '#f7f8fc',
-                'blue': '#328af1',
                 'blue-hover': '#2879bd',
-                'yellow' : '#ffc73c',
-                red : colors.red,
-                'green' : '#1aab8b',
-                purple : colors.purple,
+                yellow: colors.yellow,
+                red: colors.red,
+                purple: colors.purple,
+                blue: colors.blue
             },
             spacing: {
                 22: '5.5rem',

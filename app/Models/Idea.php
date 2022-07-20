@@ -40,11 +40,11 @@ class Idea extends Model
     public function getStatusColor($name)
     {
         $statuses= [
-            'Colesed' => 'bg-red-400',
-            'Considering'=> 'bg-red-400',
-            'In progress'=> 'bg-red-400',
-            'Implemented'=> 'bg-red-400',
-            'Open'=> 'bg-red-400',
+            'Closed' => 'red-400',
+            'Considering'=> 'purple-200',
+            'In progress'=> 'blue-200',
+            'Implemented'=> 'green-200',
+            'Open'=> 'yellow-200',
         ];
 
         foreach($statuses as $key => $value){

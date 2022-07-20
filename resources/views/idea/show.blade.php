@@ -36,8 +36,8 @@
                     </div>
                     <div class="flex items-center space-x-2 mt-4 md:mt-0" x-data="{ isOpen: false }">
                         <div
-
-                            class="{{$idea->getStatusColor($idea->status->name)}} text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4">
+                        {{-- style="background-color: {{ $idea->getStatusColor($idea->status->name) }}" --}}
+                            class="bg-{{ $idea->getStatusColor($idea->status->name) }} text-xxs font-bold uppercase leading-none rounded-full text-center text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4">
                             {{$idea->status->name}}</div>
                         <button
                             class="relative bg-gray-100 hover:bg-gray-200 border rounded-full h-7 transition duration-150 ease-in py-2 px-3"
@@ -79,7 +79,7 @@
         <div class="flex flex-col md:flex-row items-center space-x-4 md:ml-6">
             <div x-data="{ isOpen: false }" class="relative">
                 <button type="button" @click="isOpen = !isOpen"
-                    class="flex items-center justify-center h-11 w-32 text-sm bg-blue text-white font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3">
+                    class="flex items-center justify-center h-11 w-32 text-sm bg-blue-400 text-white font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3">
                     Reply
                 </button>
                 <div class="absolute z-10 w-64 md:w-104 text-left font-semibold text-sm bg-white shadow-dialog rounded-xl mt-2"
@@ -178,7 +178,7 @@
                                 <span class="ml-1">Attach</span>
                             </button>
                             <button type="submit"
-                                class="flex items-center justify-center w-1/2 h-11 text-xs bg-blue text-white font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3">
+                                class="flex items-center justify-center w-1/2 h-11 text-xs bg-blue-400 text-white font-semibold rounded-xl border border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3">
                                 <span class="ml-1">Update</span>
                             </button>
                         </div>
