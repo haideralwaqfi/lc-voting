@@ -16,7 +16,9 @@ class IdeaController extends Controller
     public function index()
     {
         return view('idea.index', [
-            'ideas' => Idea::with('user', 'category','status')->paginate(10)
+            'ideas' => Idea::with('user', 'category','status')
+            ->orderBy('id', 'desc')
+            ->paginate(10)
         ]);
     }
 
