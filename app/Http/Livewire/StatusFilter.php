@@ -11,12 +11,9 @@ use Livewire\Component;
 class StatusFilter extends Component
 {
 
-    public $status = 'all';
+    public $status;
     public $statusCount;
 
-    protected $queryString = [
-        'status'
-    ];
 
     public function getPreviousRouteName()
     {
@@ -26,12 +23,13 @@ class StatusFilter extends Component
     public function setStatus($newStatus)
     {
         $this->status = $newStatus;
+        $this->emit('queryStringUpdatedStatus', $this->status);
 
-        // if ($this->getPreviousRouteName() === 'idea.show') {
+        if ($this->getPreviousRouteName() === 'idea.show') {
             return redirect()->route('idea.index', [
                 'status' => $this->status,
             ]);
-        // }
+        }
     }
 
 
@@ -40,10 +38,10 @@ class StatusFilter extends Component
     {
 
         $this->statusCount = Status::getCount();
-
+        $this->status = request()->status ?? 'All';
         if (FacadesRoute::currentRouteName() === 'idea.show') {
             $this->status = null;
-            $this->queryString = [];
+
         }
     }
 
