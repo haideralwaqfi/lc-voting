@@ -13,8 +13,9 @@ class Idea extends Model
     use HasFactory;
     use Sluggable;
 
-    public $guarded = [];
+    const PAGINATION_COUNT = 10;
 
+    protected $guarded = [];
     public function user(){
         return $this->belongsTo(User::class);
     }
