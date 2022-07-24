@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Idea;
+use App\Models\Status;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Route as FacadesRoute;
 use Livewire\Component;
@@ -10,6 +12,7 @@ class StatusFilter extends Component
 {
 
     public $status = 'all';
+    public $statusCount;
 
     protected $queryString = [
         'status'
@@ -35,6 +38,9 @@ class StatusFilter extends Component
 
     public function mount()
     {
+
+        $this->statusCount = Status::getCount();
+
         if (FacadesRoute::currentRouteName() === 'idea.show') {
             $this->status = null;
             $this->queryString = [];

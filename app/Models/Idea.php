@@ -85,7 +85,7 @@ class Idea extends Model
         $statuses= [
             'Closed' => 'red-400 text-white',
             'Considering'=> 'purple-400 text-white',
-            'In progress'=> 'blue-400 text-white',
+            'In Progress'=> 'blue-400 text-white',
             'Implemented'=> 'green-400 text-white',
             'Open'=> 'yellow-400 text-white',
         ];

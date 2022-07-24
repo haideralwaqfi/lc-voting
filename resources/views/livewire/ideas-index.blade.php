@@ -30,12 +30,16 @@
 
     <div class="ideas-container space-y-6 my-8">
         @foreach ($ideas as $idea)
-            <livewire:idea-index :key="$idea->id" :idea="$idea" :votesCount="$idea->votes_count"
+            <livewire:idea-index
+                :key="$idea->id"
+                :idea="$idea"
+                :votesCount="$idea->votes_count"
             />
         @endforeach
-
     </div> <!-- end ideas-container -->
-    <div class="mt-8">
-        {{ $ideas->links() }}
+
+    <div class="my-8">
+        {{-- {{ $ideas->links() }} --}}
+        {{ $ideas->appends(request()->query())->links() }}
     </div>
 </div>
