@@ -44,6 +44,10 @@
                                 x-cloak x-show.origin.top.left="isOpen" x-transition @click.away="isOpen = false"
                                 @keydown.escape.window="isOpen = false">
                                 <li><a href="#"
+                                        @click="
+                                            isOpen = !isOpen
+                                            $dispatch('custom-show-edit-modal')
+                                            "
                                         class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Edit
                                         Idea</a></li>
                                 <li><a href="#"
