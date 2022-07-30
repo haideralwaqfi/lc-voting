@@ -1,6 +1,6 @@
 <x-app-layout>
     <?php
-
+    
     ?>
     <div>
         <a href="{{ $backUrl }}" class="flex items-center font-semibold hover:underline">
@@ -13,8 +13,10 @@
 
     <livewire:idea-show :idea="$idea" :votesCount="$votesCount" />
 
+    @can('update', $idea)
+        <livewire:edit-idea :idea="$idea" />
+    @endcan
 
-    <livewire:edit-idea />
 
 
 
