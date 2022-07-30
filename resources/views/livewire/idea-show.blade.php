@@ -44,18 +44,24 @@
                                 x-cloak x-show.origin.top.left="isOpen" x-transition @click.away="isOpen = false"
                                 @keydown.escape.window="isOpen = false">
                                 @can('update', $idea)
-                                <li><a href="#"
-                                    @click="
+                                    <li><a href="#"
+                                            @click="
                                         isOpen = !isOpen
                                         $dispatch('custom-show-edit-modal')
                                         "
-                                    class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Edit
-                                    Idea</a></li>
+                                            class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Edit
+                                            Idea</a></li>
+                                @endcan
+                                @can('delete', $idea)
+                                    <li><a href="#"
+                                            @click="
+                                                isOpen = !isOpen
+                                                $dispatch('custom-show-delete-modal')
+                                                "
+                                            class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Delete
+                                            Idea</a></li>
                                 @endcan
 
-                                <li><a href="#"
-                                        class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Delete
-                                        Idea</a></li>
                                 <li><a href="#"
                                         class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">Mark
                                         as Spam</a></li>
