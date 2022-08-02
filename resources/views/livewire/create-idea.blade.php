@@ -48,13 +48,12 @@
             <span class="ml-1">Submit</span>
         </button>
     </div>
-    <div>
+    {{-- <div>
         @if (session('success_message'))
             <div
                 x-data="{ isVisible: true }"
                 x-init="
-                    setTimeout(() => {
-                        isVisible = false
+                    setTimeout(() =>
                     }, 3000)
                 "
                 x-show="isVisible"
@@ -64,5 +63,5 @@
                 {{ session('success_message') }}
             </div>
         @endif
-    </div>
+    </div> --}}
 </form>
