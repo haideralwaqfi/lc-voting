@@ -18,14 +18,12 @@
 
         <div class="mt-8">
             @if ($hasVoted)
-                <button
-                    wire:click.prevent="vote"
+                <button wire:click.prevent="vote"
                     class="w-20 bg-blue-400 border text-white border-blue-200 font-bold text-xxs uppercase rounded-xl hover:border-blue-400 transition duration-150 ease-in px-4 py-3 -mx-5">
                     Voted
                 </button>
             @else
-                <button
-                wire:click.prevent="vote"
+                <button wire:click.prevent="vote"
                     class="w-20 bg-gray-200 border border-gray-200 font-bold text-xxs uppercase rounded-xl hover:border-gray-400 transition duration-150 ease-in px-4 py-3 -mx-5">
                     Vote
                 </button>
@@ -43,6 +41,12 @@
                 <a href="{{ route('idea.show', $idea) }}" class="idea-link hover:underline">{{ $idea->title }}</a>
             </h4>
             <div class="text-gray-600 mt-3 line-clamp-3">
+                @admin
+                    @if ($idea->spam_reports > 0)
+                        <div class="text-red-400 font-xs">Reported As Spam: {{ $idea->spam_reports }}</div>
+                    @endif
+                @endadmin
+
                 {{ $idea->description }}
             </div>
 
@@ -91,8 +95,7 @@
                             Voted
                         </button>
                     @else
-                        <button
-                        wire:click.prevent="vote"
+                        <button wire:click.prevent="vote"
                             class="w-20 bg-gray-200 border border-gray-200 font-bold text-xxs uppercase rounded-xl hover:border-gray-400 transition duration-150 ease-in px-4 py-3 -mx-5">
                             Vote
                         </button>

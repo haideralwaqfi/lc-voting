@@ -1,6 +1,6 @@
 <x-app-layout>
     <?php
-    
+
     ?>
     <div>
         <a href="{{ $backUrl }}" class="flex items-center font-semibold hover:underline">
@@ -20,6 +20,9 @@
         <livewire:delete-idea :idea="$idea" />
     @endcan
 
+    <livewire:mark-idea-as-spam :idea="$idea" />
+
+    <livewire:mark-idea-as-not-spam :idea="$idea" />
 
 
 
